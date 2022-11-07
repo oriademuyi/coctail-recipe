@@ -1,16 +1,19 @@
-# cocktail
+Do you care to know the content of your drinks(alcoholic and non alcoholic)?
 
-A new Flutter project.
+Do you want to  stay at home and make you drink?
 
-## Getting Started
+Are you a mixer?
 
-This project is a starting point for a Flutter application.
+Are you a fan of drinks (alcoholic and non alcoholic)?
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+coctail recipe is here for you:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Cocktail recipe is a mobile app that allows a registered user to effortlessly search for alcoholic or non alcoholic drinks  recipes and production process.
+ 
+ with this app you can view/search all dricks recipes and production process.you can make
+ 
+ 
+cooming soon
+
+apk is coming soon!!!!!!!!!!!
