@@ -1,3 +1,4 @@
+import 'package:cocktail/screen/orderpage.dart';
 import 'package:flutter/material.dart';
 
 class placeorderpage extends StatefulWidget {
@@ -324,20 +325,28 @@ class _placeorderpageState extends State<placeorderpage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 15),
-                    child: Container(
-                        width: 390,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return Orderpage();
+                        }));
+                      },
+                      child: Container(
+                          width: 390,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
                           ),
-                        ),
-                        child: Center(
-                            child: Text("MAkE ORDER",
-                                style: TextStyle(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold)))),
+                          child: Center(
+                              child: Text("MAkE ORDER",
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.bold)))),
+                    ),
                   )
                 ],
               ),
