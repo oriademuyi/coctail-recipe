@@ -210,13 +210,6 @@ class _welcomepageState extends State<welcomepage> {
                                               children: [
                                                 Column(
                                                   children: [
-                                                    // SizedBox(
-                                                    //     width: 100,
-                                                    //     child: Text(snapshot
-                                                    //         .data!
-                                                    //         .userId[index]
-                                                    //         .strDrink
-                                                    //         .toString())),
                                                     Row(
                                                       children: [
                                                         Text("ID:"),
@@ -413,13 +406,6 @@ class _welcomepageState extends State<welcomepage> {
                                                 children: [
                                                   Column(
                                                     children: [
-                                                      // SizedBox(
-                                                      //     width: 100,
-                                                      //     child: Text(snapshot
-                                                      //         .data!
-                                                      //         .userId[index]
-                                                      //         .strDrink
-                                                      //         .toString())),
                                                       Row(
                                                         children: [
                                                           Text("ID:"),
@@ -430,6 +416,46 @@ class _welcomepageState extends State<welcomepage> {
                                                               .toString()),
                                                         ],
                                                       ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(top: 50),
+                                                        child: TextButton(
+                                                            onPressed: () {
+                                                              print(
+                                                                snapshot
+                                                                    .data!
+                                                                    .userId[
+                                                                        index]
+                                                                    .category,
+                                                              );
+                                                              Navigator.push(
+                                                                  context,
+                                                                  MaterialPageRoute(
+                                                                      builder:
+                                                                          (context) {
+                                                                return placeorderpage(
+                                                                  drinkid: snapshot
+                                                                      .data!
+                                                                      .userId[
+                                                                          index]
+                                                                      .idDrink,
+                                                                  drinkname: snapshot
+                                                                      .data!
+                                                                      .userId[
+                                                                          index]
+                                                                      .strDrink,
+                                                                  image: snapshot
+                                                                      .data!
+                                                                      .userId[
+                                                                          index]
+                                                                      .picture,
+                                                                );
+                                                              }));
+                                                            },
+                                                            child:
+                                                                Text('Order')),
+                                                      )
                                                     ],
                                                   ),
                                                   SizedBox(

@@ -1,5 +1,6 @@
 import 'package:cocktail/model/cocktailinfo.dart';
 import 'package:cocktail/screen/detailspage.dart';
+import 'package:cocktail/screen/placeorder.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
@@ -124,6 +125,38 @@ class _SearchpageState extends State<Searchpage> {
                                                     .toString()),
                                               ],
                                             ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 50),
+                                              child: TextButton(
+                                                  onPressed: () {
+                                                    print(
+                                                      snapshot
+                                                          .data!
+                                                          .userId[index]
+                                                          .category,
+                                                    );
+                                                    Navigator.push(context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) {
+                                                      return placeorderpage(
+                                                        drinkid: snapshot
+                                                            .data!
+                                                            .userId[index]
+                                                            .idDrink,
+                                                        drinkname: snapshot
+                                                            .data!
+                                                            .userId[index]
+                                                            .strDrink,
+                                                        image: snapshot
+                                                            .data!
+                                                            .userId[index]
+                                                            .picture,
+                                                      );
+                                                    }));
+                                                  },
+                                                  child: Text('Order')),
+                                            )
                                           ],
                                         ),
                                         SizedBox(

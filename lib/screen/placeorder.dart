@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cocktail/screen/orderpage.dart';
 import 'package:flutter/material.dart';
 
@@ -119,60 +121,96 @@ class _placeorderpageState extends State<placeorderpage> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(20.0),
                           child: Column(
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    "Category",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
+                                  Image.asset(
+                                    "assets/coctail2.jpeg",
+                                    width: 50,
+                                    height: 50,
                                   ),
                                   SizedBox(
-                                    width: 5,
+                                    width: 10,
                                   ),
-                                  Text(
-                                    "placeh",
-                                    style: TextStyle(
-                                        color: Colors.yellow, fontSize: 15),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Order",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        "drink.love",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 12),
+                                      )
+                                    ],
                                   ),
                                 ],
                               ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "Alcoholic",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    "placeh",
-                                    style: TextStyle(
-                                        color: Colors.yellow, fontSize: 15),
-                                  ),
-                                ],
+                              SizedBox(
+                                height: 15,
                               ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "Glass cup",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
+                              Container(
+                                padding: const EdgeInsets.all(5.0),
+                                decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.white)),
+                                child: IntrinsicHeight(
+                                  child: Row(
+                                    children: [
+                                      SizedBox(
+                                          width: 50,
+                                          child: Text(
+                                            "GET FREE DELIVERY",
+                                            style: TextStyle(
+                                                fontSize: 11,
+                                                color: Colors.white),
+                                          )),
+                                      VerticalDivider(
+                                        color: Colors.white,
+                                        thickness: 2,
+                                      ),
+                                      SizedBox(
+                                          width: 40,
+                                          child: Text(
+                                            "ojota,surulere,yaba,ketu,bariga",
+                                            style: TextStyle(
+                                                fontSize: 8,
+                                                color: Colors.white),
+                                          ))
+                                    ],
                                   ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    "placeh",
-                                    style: TextStyle(
-                                        color: Colors.yellow, fontSize: 15),
-                                  ),
-                                ],
-                              ),
+                                ),
+                                //  Row(
+                                //   children: [
+                                //     SizedBox(
+                                //         width: 50,
+                                //         child: Text(
+                                //           "GET FREE DELIVERY",
+                                //           style: TextStyle(
+                                //               fontSize: 11,
+                                //               color: Colors.white),
+                                //         )),
+                                //     VerticalDivider(
+                                //       color: Colors.white,
+                                //       thickness: 5,
+                                //     ),
+                                //     SizedBox(
+                                //         width: 40,
+                                //         child: Text(
+                                //           "ojota,surulere,yaba,ketu,bariga",
+                                //           style: TextStyle(
+                                //               fontSize: 8, color: Colors.white),
+                                //         ))
+                                //   ],
+                                // ),
+                              )
                             ],
                           ),
                         ),
@@ -329,7 +367,10 @@ class _placeorderpageState extends State<placeorderpage> {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return Orderpage();
+                          return Orderpage(
+                            drinkname: widget.drinkname,
+                            drinkprice: pricequantity,
+                          );
                         }));
                       },
                       child: Container(
