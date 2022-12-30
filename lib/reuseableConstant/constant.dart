@@ -18,13 +18,13 @@ const Ktestfeilddecoration = InputDecoration(
 
 const Kinputddecoration = InputDecoration(
   filled: true,
-  fillColor: Colors.grey,
+  fillColor: Colors.white70,
   icon: Icon(
     Icons.location_city,
-    color: Colors.black,
+    color: Colors.blue,
   ),
   hintText: 'Full Name',
-  hintStyle: TextStyle(color: Colors.black),
+  hintStyle: TextStyle(color: Colors.blue),
   border: OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(10)),
       borderSide: BorderSide.none),

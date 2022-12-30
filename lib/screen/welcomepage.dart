@@ -3,6 +3,7 @@ import 'package:cocktail/reuseableConstant/constant.dart';
 import 'package:cocktail/screen/detailspage.dart';
 import 'package:cocktail/screen/loadingpage.dart';
 import 'package:cocktail/screen/orderpage.dart';
+import 'package:cocktail/screen/placeorder.dart';
 import 'package:cocktail/screen/search.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -80,19 +81,9 @@ class _welcomepageState extends State<welcomepage> {
       child: Scaffold(
         // backgroundColor: Colors.white,
         appBar: AppBar(
-          // actions: [
-          //   IconButton(
-          //     icon: const Icon(
-          //       Icons.arrow_back,
-          //       color: Colors.pink,
-          //       size: 24.0,
-          //       semanticLabel: 'Text to announce in accessibility modes',
-          //     ),
-          //     onPressed: () {},
-          //   ),
-          // ],
           title: Column(
             children: [
+              SizedBox(height: 20),
               Row(
                 children: [
                   Container(
@@ -219,13 +210,6 @@ class _welcomepageState extends State<welcomepage> {
                                               children: [
                                                 Column(
                                                   children: [
-                                                    // SizedBox(
-                                                    //     width: 100,
-                                                    //     child: Text(snapshot
-                                                    //         .data!
-                                                    //         .userId[index]
-                                                    //         .strDrink
-                                                    //         .toString())),
                                                     Row(
                                                       children: [
                                                         Text("ID:"),
@@ -242,12 +226,18 @@ class _welcomepageState extends State<welcomepage> {
                                                               top: 50),
                                                       child: TextButton(
                                                           onPressed: () {
+                                                            print(
+                                                              snapshot
+                                                                  .data!
+                                                                  .userId[index]
+                                                                  .category,
+                                                            );
                                                             Navigator.push(
                                                                 context,
                                                                 MaterialPageRoute(
                                                                     builder:
                                                                         (context) {
-                                                              return Orderpage(
+                                                              return placeorderpage(
                                                                 drinkid: snapshot
                                                                     .data!
                                                                     .userId[
@@ -258,6 +248,11 @@ class _welcomepageState extends State<welcomepage> {
                                                                     .userId[
                                                                         index]
                                                                     .strDrink,
+                                                                image: snapshot
+                                                                    .data!
+                                                                    .userId[
+                                                                        index]
+                                                                    .picture,
                                                               );
                                                             }));
                                                           },
@@ -411,13 +406,6 @@ class _welcomepageState extends State<welcomepage> {
                                                 children: [
                                                   Column(
                                                     children: [
-                                                      // SizedBox(
-                                                      //     width: 100,
-                                                      //     child: Text(snapshot
-                                                      //         .data!
-                                                      //         .userId[index]
-                                                      //         .strDrink
-                                                      //         .toString())),
                                                       Row(
                                                         children: [
                                                           Text("ID:"),
@@ -428,6 +416,46 @@ class _welcomepageState extends State<welcomepage> {
                                                               .toString()),
                                                         ],
                                                       ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(top: 50),
+                                                        child: TextButton(
+                                                            onPressed: () {
+                                                              print(
+                                                                snapshot
+                                                                    .data!
+                                                                    .userId[
+                                                                        index]
+                                                                    .category,
+                                                              );
+                                                              Navigator.push(
+                                                                  context,
+                                                                  MaterialPageRoute(
+                                                                      builder:
+                                                                          (context) {
+                                                                return placeorderpage(
+                                                                  drinkid: snapshot
+                                                                      .data!
+                                                                      .userId[
+                                                                          index]
+                                                                      .idDrink,
+                                                                  drinkname: snapshot
+                                                                      .data!
+                                                                      .userId[
+                                                                          index]
+                                                                      .strDrink,
+                                                                  image: snapshot
+                                                                      .data!
+                                                                      .userId[
+                                                                          index]
+                                                                      .picture,
+                                                                );
+                                                              }));
+                                                            },
+                                                            child:
+                                                                Text('Order')),
+                                                      )
                                                     ],
                                                   ),
                                                   SizedBox(
