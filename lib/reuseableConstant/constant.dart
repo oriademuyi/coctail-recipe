@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 const Ktestfeilddecoration = InputDecoration(
   filled: true,
   fillColor: Colors.white,
-  // icon: Icon(
-  //   Icons.location_city,
-  //   color: Colors.white,
-  // ),
-  hintText: 'Enter Cocktail Name',
+  hintText: 'Search by name',
   hintStyle: TextStyle(
     color: Colors.grey,
   ),

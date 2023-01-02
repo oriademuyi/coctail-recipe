@@ -88,7 +88,7 @@ class _welcomepageState extends State<welcomepage> {
                 children: [
                   Container(
                     height: 80,
-                    width: 300,
+                    width: 250,
                     padding: EdgeInsets.all(20.0),
                     alignment: Alignment.center,
                     child: TextField(

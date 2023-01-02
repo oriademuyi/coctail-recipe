@@ -26,15 +26,10 @@ class _DetailspageState extends State<Detailspage> {
       print(response.body);
       print(Album.fromJson(jsonDecode(response.body)).userId);
 
-      // print(futureAlbum);
-
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
       return Album.fromJson(jsonDecode(response.body));
     } else {
       print(response.body);
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
+
       throw Exception('Failed to load album');
     }
   }

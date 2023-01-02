@@ -1,3 +1,4 @@
+import 'package:cocktail/screen/homePage.dart';
 import 'package:cocktail/screen/loadingpage.dart';
 import 'package:cocktail/screen/welcomepage.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       ),
       home:
           // const loadingpage(),
-          const welcomepage(),
+          // const welcomepage(),
+          const homePage(),
     );
   }
 }

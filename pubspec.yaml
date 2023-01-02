@@ -70,6 +70,23 @@ flutter:
     - assets/coctail3.jpeg
     - assets/coctail4.jpeg
     - assets/coctail5.webp
+    - assets/food2.webp
+    - assets/foodrecipe.jpeg
+    - assets/food1.jpeg
+    - assets/food2.jpeg
+    - assets/drink1.jpeg
+    - assets/drink2.jpeg
+    - assets/beef1.jpeg
+    - assets/beef2.jpeg
+    - assets/breakfast.webp
+    - assets/chicken1.jpeg
+    - assets/desset.jpeg
+    - assets/goat.jpeg
+    - assets/lamb.jpeg
+    - assets/realcocktail1.jpeg
+    - assets/realcocktail2.jpeg
+    - assets/realcocktail3.webp
+    - assets/realcocktail4.jpeg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
