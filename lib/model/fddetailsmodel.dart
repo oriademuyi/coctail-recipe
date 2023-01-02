@@ -2,30 +2,32 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 
-class Album {
-  final List<DefaultDatum> userId;
-  final drinkname;
+class Fddetailsmodel {
+  final List<DefaultDatum> foodId;
+  final foodname;
   final Category;
-  final Alcoholic;
+  final strAre;
   final Picture;
+  // final strInstructions;
 
-  Album({
-    required this.userId,
-    this.drinkname,
+  Fddetailsmodel({
+    required this.foodId,
+    this.foodname,
     this.Category,
-    this.Alcoholic,
+    this.strAre,
     this.Picture,
+    // this.strInstructions;
   });
 
-  factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
+  factory Fddetailsmodel.fromJson(Map<String, dynamic> json) {
+    return Fddetailsmodel(
       // userId: json["drinks"] ?? [],
-      userId: List<DefaultDatum>.from(
-          json["drinks"].map((x) => DefaultDatum.fromJson(x))),
-      drinkname: json["drinks"][0]['strDrink'] ?? [],
-      Category: json["drinks"][0]['strCategory'] ?? [],
-      Alcoholic: json["drinks"][0]['strAlcoholic'] ?? [],
-      Picture: json["drinks"][0]['strDrinkThumb'] ?? [],
+      foodId: List<DefaultDatum>.from(
+          json["meals"].map((x) => DefaultDatum.fromJson(x))),
+      foodname: json["meals"][0]['strMeal'] ?? [],
+      Category: json["meals"][0]['strCategory'] ?? [],
+      strAre: json["meals"][0]['strArea'] ?? [],
+      Picture: json["meals"][0]['strMealThumb'] ?? [],
 
       // id: json['id'] ?? 0,
       // title: json['title'] ?? "",
