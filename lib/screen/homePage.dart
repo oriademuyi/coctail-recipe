@@ -13,7 +13,6 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
-  bool _showFirstImage = true;
   int _currentImageIndex = 0;
   List<String> _imagePaths = [
     'assets/foodrecipe.jpeg',
@@ -43,7 +42,7 @@ class _homePageState extends State<homePage> {
     //     });
     //   });
     // }
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
       setState(() {
         _currentImageIndex = (_currentImageIndex + 1) % _imagePaths.length;
       });
