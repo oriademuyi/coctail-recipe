@@ -5,6 +5,7 @@ import 'package:cocktail/model/fdmode.dart';
 import 'package:cocktail/model/fdmodellocation.dart';
 import 'package:cocktail/reuseableConstant/constant.dart';
 import 'package:cocktail/screen/foodfolder/fddrilldown.dart';
+import 'package:cocktail/screen/foodfolder/fdfurtherdrilldown.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -19,6 +20,7 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
   Future<Foodmodel>? foodcategory;
   Future<Foodmodellocation>? foodlaocation;
   Future<Foodmodel>? foodingredient;
+  String? CityName;
 
   Future<Foodmodel> fetchfoodcategory() async {
     final response = await http.get(
@@ -111,12 +113,21 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                       style: TextStyle(color: Colors.black),
                       decoration: Ktestfeilddecoration,
                       onChanged: (value) {
-                        // CityName = value;
+                        CityName = value;
                       },
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      CityName == ''
+                          ? Container()
+                          : Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                              return fdfurtherdrilldown(
+                                foodname: CityName,
+                              );
+                            }));
+                    },
                     child: Icon(
                       Icons.saved_search,
                       color: Colors.white,
@@ -349,13 +360,69 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                                                                                       style: TextStyle(fontSize: 10),
                                                                                     ),
                                                                                   )
-                                                                                : SizedBox(
-                                                                                    width: 110,
-                                                                                    child: Text(
-                                                                                      "can be prepared in a vast range of ways, including baking, grilling, barbecuing, frying, and boiling",
-                                                                                      style: TextStyle(fontSize: 10),
-                                                                                    ),
-                                                                                  ),
+                                                                                : snapshot.data!.meals![index].strCategory.toString() == "Miscellaneous"
+                                                                                    ? SizedBox(
+                                                                                        width: 110,
+                                                                                        child: Text(
+                                                                                          "",
+                                                                                          style: TextStyle(fontSize: 10),
+                                                                                        ),
+                                                                                      )
+                                                                                    : snapshot.data!.meals![index].strCategory.toString() == "Pasta"
+                                                                                        ? SizedBox(
+                                                                                            width: 110,
+                                                                                            child: Text(
+                                                                                              "Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs.",
+                                                                                              style: TextStyle(fontSize: 10),
+                                                                                            ),
+                                                                                          )
+                                                                                        : snapshot.data!.meals![index].strCategory.toString() == "Pork"
+                                                                                            ? SizedBox(
+                                                                                                width: 110,
+                                                                                                child: Text(
+                                                                                                  "Pork is the culinary name for the meat of the domestic pig. It is the most commonly consumed meat worldwide",
+                                                                                                  style: TextStyle(fontSize: 10),
+                                                                                                ),
+                                                                                              )
+                                                                                            : snapshot.data!.meals![index].strCategory.toString() == "Seafood"
+                                                                                                ? SizedBox(
+                                                                                                    width: 110,
+                                                                                                    child: Text(
+                                                                                                      "Seafood is any form of sea life regarded as food by humans, prominently including fish and shellfish",
+                                                                                                      style: TextStyle(fontSize: 10),
+                                                                                                    ),
+                                                                                                  )
+                                                                                                : snapshot.data!.meals![index].strCategory.toString() == "Starter"
+                                                                                                    ? SizedBox(
+                                                                                                        width: 110,
+                                                                                                        child: Text(
+                                                                                                          "Bread starter or sponge, a fermented mixture used in baking sourdough",
+                                                                                                          style: TextStyle(fontSize: 10),
+                                                                                                        ),
+                                                                                                      )
+                                                                                                    : snapshot.data!.meals![index].strCategory.toString() == "Vegan"
+                                                                                                        ? SizedBox(
+                                                                                                            width: 110,
+                                                                                                            child: Text(
+                                                                                                              "A vegan diet is based on plants  foods made from plants. Vegans do not eat foods that come from animals,",
+                                                                                                              style: TextStyle(fontSize: 10),
+                                                                                                            ),
+                                                                                                          )
+                                                                                                        : snapshot.data!.meals![index].strCategory.toString() == "Vegetarian"
+                                                                                                            ? SizedBox(
+                                                                                                                width: 110,
+                                                                                                                child: Text(
+                                                                                                                  "Vegetarian cuisine is based on food that meets vegetarian standards by not including meat and animal tissue products",
+                                                                                                                  style: TextStyle(fontSize: 10),
+                                                                                                                ),
+                                                                                                              )
+                                                                                                            : SizedBox(
+                                                                                                                width: 110,
+                                                                                                                child: Text(
+                                                                                                                  "can be prepared in a vast range of ways, including baking, grilling, barbecuing, frying, and boiling",
+                                                                                                                  style: TextStyle(fontSize: 10),
+                                                                                                                ),
+                                                                                                              ),
                                                       ],
                                                     ),
                                                     snapshot.data!.meals![index]
@@ -402,8 +469,7 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                                                                   )
                                                                 : snapshot
                                                                             .data!
-                                                                            .meals![
-                                                                                index]
+                                                                            .meals![index]
                                                                             .strCategory
                                                                             .toString() ==
                                                                         "Dessert"
@@ -417,8 +483,7 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                                                                               90,
                                                                         ),
                                                                       )
-                                                                    : snapshot.data!.meals![index].strCategory.toString() ==
-                                                                            "Goat"
+                                                                    : snapshot.data!.meals![index].strCategory.toString() == "Goat"
                                                                         ? ClipOval(
                                                                             child:
                                                                                 Image.asset(
@@ -427,8 +492,7 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                                                                               height: 90,
                                                                             ),
                                                                           )
-                                                                        : snapshot.data!.meals![index].strCategory.toString() ==
-                                                                                "Lamb"
+                                                                        : snapshot.data!.meals![index].strCategory.toString() == "Lamb"
                                                                             ? ClipOval(
                                                                                 child: Image.asset(
                                                                                   'assets/lamb.jpeg',
@@ -436,13 +500,77 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                                                                                   height: 90,
                                                                                 ),
                                                                               )
-                                                                            : ClipOval(
-                                                                                child: Image.asset(
-                                                                                  'assets/breakfast.webp',
-                                                                                  width: 90,
-                                                                                  height: 90,
-                                                                                ),
-                                                                              )
+                                                                            : snapshot.data!.meals![index].strCategory.toString() == "Pasta"
+                                                                                ? ClipOval(
+                                                                                    child: Image.asset(
+                                                                                      'assets/pasta1.jpeg',
+                                                                                      width: 90,
+                                                                                      height: 90,
+                                                                                    ),
+                                                                                  )
+                                                                                : snapshot.data!.meals![index].strCategory.toString() == "Pork"
+                                                                                    ? ClipOval(
+                                                                                        child: Image.asset(
+                                                                                          'assets/pork1.jpeg',
+                                                                                          width: 90,
+                                                                                          height: 90,
+                                                                                        ),
+                                                                                      )
+                                                                                    : snapshot.data!.meals![index].strCategory.toString() == "Miscellaneous"
+                                                                                        ? ClipOval(
+                                                                                            child: Image.asset(
+                                                                                              'assets/misss2.jpeg',
+                                                                                              width: 90,
+                                                                                              height: 90,
+                                                                                            ),
+                                                                                          )
+                                                                                        : snapshot.data!.meals![index].strCategory.toString() == "Seafood"
+                                                                                            ? ClipOval(
+                                                                                                child: Image.asset(
+                                                                                                  'assets/seafood.jpeg',
+                                                                                                  width: 90,
+                                                                                                  height: 90,
+                                                                                                ),
+                                                                                              )
+                                                                                            : snapshot.data!.meals![index].strCategory.toString() == "Side"
+                                                                                                ? ClipOval(
+                                                                                                    child: Image.asset(
+                                                                                                      'assets/side.jpeg',
+                                                                                                      width: 90,
+                                                                                                      height: 90,
+                                                                                                    ),
+                                                                                                  )
+                                                                                                : snapshot.data!.meals![index].strCategory.toString() == "Starter"
+                                                                                                    ? ClipOval(
+                                                                                                        child: Image.asset(
+                                                                                                          'assets/start.jpeg',
+                                                                                                          width: 90,
+                                                                                                          height: 90,
+                                                                                                        ),
+                                                                                                      )
+                                                                                                    : snapshot.data!.meals![index].strCategory.toString() == "Vegan"
+                                                                                                        ? ClipOval(
+                                                                                                            child: Image.asset(
+                                                                                                              'assets/vagan.jpeg',
+                                                                                                              width: 90,
+                                                                                                              height: 90,
+                                                                                                            ),
+                                                                                                          )
+                                                                                                        : snapshot.data!.meals![index].strCategory.toString() == "Vegetarian"
+                                                                                                            ? ClipOval(
+                                                                                                                child: Image.asset(
+                                                                                                                  'assets/veg.jpeg',
+                                                                                                                  width: 90,
+                                                                                                                  height: 90,
+                                                                                                                ),
+                                                                                                              )
+                                                                                                            : ClipOval(
+                                                                                                                child: Image.asset(
+                                                                                                                  'assets/breakfast.webp',
+                                                                                                                  width: 90,
+                                                                                                                  height: 90,
+                                                                                                                ),
+                                                                                                              )
                                                   ],
                                                 ),
                                               ),
@@ -471,6 +599,7 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                   print(snapshot.data);
                   return ListView.builder(
                       itemCount: snapshot.data!.meals!.length,
+                      scrollDirection: Axis.vertical,
                       itemBuilder: (BuildContext context, int index) {
                         return InkWell(
                             onTap: () {
@@ -486,12 +615,155 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                                 ),
                               );
                             },
-                            child: Column(
-                              children: [
-                                Text("food location"),
-                                Text(snapshot.data!.meals![index].strArea
-                                    .toString()),
-                              ],
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width: 250,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(25)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 5,
+                                          blurRadius: 7,
+                                          offset: Offset(0,
+                                              3), // changes position of shadow
+                                        ),
+                                      ],
+                                      color: Colors.white,
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Column(
+                                        children: [
+                                          // Text("food location"),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 10),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(snapshot
+                                                    .data!.meals![index].strArea
+                                                    .toString()),
+                                                snapshot.data!.meals![index]
+                                                            .strArea ==
+                                                        "American"
+                                                    ? ClipOval(
+                                                        child: Image.asset(
+                                                          'assets/americaflag.png',
+                                                          width: 100,
+                                                          height: 100,
+                                                        ),
+                                                      )
+                                                    : snapshot
+                                                                .data!
+                                                                .meals![index]
+                                                                .strArea ==
+                                                            "British"
+                                                        ? ClipOval(
+                                                            child: Image.asset(
+                                                              'assets/britishflag.png',
+                                                              width: 100,
+                                                              height: 100,
+                                                            ),
+                                                          )
+                                                        : snapshot
+                                                                    .data!
+                                                                    .meals![
+                                                                        index]
+                                                                    .strArea ==
+                                                                "Canadian"
+                                                            ? ClipOval(
+                                                                child:
+                                                                    Image.asset(
+                                                                  'assets/cannadaflag2.webp',
+                                                                  width: 100,
+                                                                  height: 100,
+                                                                ),
+                                                              )
+                                                            : snapshot
+                                                                        .data!
+                                                                        .meals![
+                                                                            index]
+                                                                        .strArea ==
+                                                                    "Chinese"
+                                                                ? ClipOval(
+                                                                    child: Image
+                                                                        .asset(
+                                                                      'assets/chineseflag.webp',
+                                                                      width:
+                                                                          100,
+                                                                      height:
+                                                                          100,
+                                                                    ),
+                                                                  )
+                                                                : snapshot
+                                                                            .data!
+                                                                            .meals![
+                                                                                index]
+                                                                            .strArea ==
+                                                                        "Croatian"
+                                                                    ? ClipOval(
+                                                                        child: Image
+                                                                            .asset(
+                                                                          'assets/crotainflag.png',
+                                                                          width:
+                                                                              100,
+                                                                          height:
+                                                                              100,
+                                                                        ),
+                                                                      )
+                                                                    : snapshot.data!.meals![index].strArea ==
+                                                                            "Dutch"
+                                                                        ? ClipOval(
+                                                                            child:
+                                                                                Image.asset(
+                                                                              'assets/dutch.png',
+                                                                              width: 100,
+                                                                              height: 100,
+                                                                            ),
+                                                                          )
+                                                                        : snapshot.data!.meals![index].strArea ==
+                                                                                "Egyptian"
+                                                                            ? ClipOval(
+                                                                                child: Image.asset(
+                                                                                  'assets/egyptflag.png',
+                                                                                  width: 100,
+                                                                                  height: 100,
+                                                                                ),
+                                                                              )
+                                                                            : snapshot.data!.meals![index].strArea == "French"
+                                                                                ? ClipOval(
+                                                                                    child: Image.asset(
+                                                                                      'assets/franceflag.webp',
+                                                                                      width: 100,
+                                                                                      height: 100,
+                                                                                    ),
+                                                                                  )
+                                                                                : ClipOval(
+                                                                                    child: Image.asset(
+                                                                                      'assets/americaflag.png',
+                                                                                      width: 10,
+                                                                                      height: 10,
+                                                                                    ),
+                                                                                  )
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ));
                       });
                 } else {

@@ -8,7 +8,9 @@ class Fddetailsmodel {
   final Category;
   final strAre;
   final Picture;
-  // final strInstructions;
+  final strInstructions;
+  final yotube;
+  final source;
 
   Fddetailsmodel({
     required this.foodId,
@@ -16,7 +18,9 @@ class Fddetailsmodel {
     this.Category,
     this.strAre,
     this.Picture,
-    // this.strInstructions;
+    this.strInstructions,
+    this.yotube,
+    this.source,
   });
 
   factory Fddetailsmodel.fromJson(Map<String, dynamic> json) {
@@ -28,6 +32,9 @@ class Fddetailsmodel {
       Category: json["meals"][0]['strCategory'] ?? [],
       strAre: json["meals"][0]['strArea'] ?? [],
       Picture: json["meals"][0]['strMealThumb'] ?? [],
+      strInstructions: json["meals"][0]['strInstructions'] ?? [],
+      yotube: json["meals"][0]['strYoutube'] ?? [],
+      source: json["meals"][0]['strSource'] ?? [],
 
       // id: json['id'] ?? 0,
       // title: json['title'] ?? "",
@@ -64,6 +71,11 @@ class DefaultDatum {
     this.ingredient13,
     this.ingredient14,
     this.ingredient15,
+    this.ingredient16,
+    this.ingredient17,
+    this.ingredient18,
+    this.ingredient19,
+    this.ingredient20,
     this.measurement1,
     this.measurement2,
     this.measurement3,
@@ -79,6 +91,11 @@ class DefaultDatum {
     this.measurement13,
     this.measurement14,
     this.measurement15,
+    this.measurement16,
+    this.measurement17,
+    this.measurement18,
+    this.measurement19,
+    this.measurement20,
   });
 
   String? idDrink;
@@ -105,6 +122,11 @@ class DefaultDatum {
   String? ingredient13;
   String? ingredient14;
   String? ingredient15;
+  String? ingredient16;
+  String? ingredient17;
+  String? ingredient18;
+  String? ingredient19;
+  String? ingredient20;
 
   String? measurement1;
   String? measurement2;
@@ -121,10 +143,15 @@ class DefaultDatum {
   String? measurement13;
   String? measurement14;
   String? measurement15;
+  String? measurement16;
+  String? measurement17;
+  String? measurement18;
+  String? measurement19;
+  String? measurement20;
 
   factory DefaultDatum.fromJson(Map<String, dynamic> json) => DefaultDatum(
-        idDrink: json["idDrink"],
-        strDrink: json["strDrink"],
+        idDrink: json["idMeal"],
+        strDrink: json["strMeal"],
         strDrinkAlternate: json["strDrinkAlternate"],
         strTags: json["strTags"],
         picture: json["strDrinkThumb"],
@@ -147,22 +174,32 @@ class DefaultDatum {
         ingredient13: json["strIngredient13"],
         ingredient14: json["strIngredient14"],
         ingredient15: json["strIngredient15"],
+        ingredient16: json["strIngredient16"],
+        ingredient17: json["strIngredient17"],
+        ingredient18: json["strIngredient18"],
+        ingredient19: json["strIngredient19"],
+        ingredient20: json["strIngredient20"],
 
-        measurement1: json["measurement1"],
-        measurement2: json["measurement2"],
-        measurement3: json["measurement3"],
-        measurement4: json["measurement4"],
-        measurement5: json["measurement5"],
-        measurement6: json["measurement6"],
-        measurement7: json["measurement7"],
-        measurement8: json["measurement8"],
-        measurement9: json["measurement9"],
-        measurement10: json["measurement10"],
-        measurement11: json["measurement11"],
-        measurement12: json["measurement12"],
-        measurement13: json["measurement13"],
-        measurement14: json["measurement14"],
-        measurement15: json["measurement15"],
+        measurement1: json["strMeasure1"],
+        measurement2: json["strMeasure2"],
+        measurement3: json["strMeasure3"],
+        measurement4: json["strMeasure4"],
+        measurement5: json["strMeasure5"],
+        measurement6: json["strMeasure6"],
+        measurement7: json["strMeasure7"],
+        measurement8: json["strMeasure8"],
+        measurement9: json["strMeasure9"],
+        measurement10: json["strMeasure10"],
+        measurement11: json["strMeasure11"],
+        measurement12: json["strMeasure12"],
+        measurement13: json["strMeasure13"],
+        measurement14: json["strMeasure14"],
+        measurement15: json["strMeasure15"],
+        measurement16: json["strMeasure16"],
+        measurement17: json["strMeasure17"],
+        measurement18: json["strMeasure18"],
+        measurement19: json["strMeasure19"],
+        measurement20: json["strMeasure20"],
 
         // from: json["from"],
 

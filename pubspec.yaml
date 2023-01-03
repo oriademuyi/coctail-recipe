@@ -87,6 +87,26 @@ flutter:
     - assets/realcocktail2.jpeg
     - assets/realcocktail3.webp
     - assets/realcocktail4.jpeg
+    - assets/pasta1.jpeg
+    - assets/pork1.jpeg
+    - assets/seafood.jpeg
+    - assets/side.jpeg
+    - assets/misce.jpeg
+    - assets/misss2.jpeg
+    - assets/start.jpeg
+    - assets/vagan.jpeg
+    - assets/veg.jpeg
+    - assets/vegetable.jpeg
+    - assets/vegetable1.webp
+    - assets/americaflag.png
+    - assets/britishflag.png
+    - assets/canadaflag.webp
+    - assets/cannadaflag2.webp
+    - assets/chineseflag.webp
+    - assets/crotainflag.png
+    - assets/dutch.png
+    - assets/egyptflag.png
+    - assets/franceflag.webp
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
