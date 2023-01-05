@@ -90,17 +90,14 @@ class _DetailspageState extends State<Detailspage> {
                                 "${snapshot.data!.userId[index].strDrink.toString()}"),
                           ],
                         ),
-                        SizedBox(
-                          height: 5,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Drink Id:"),
+                            Text(
+                                "${snapshot.data!.userId[index].idDrink.toString()}"),
+                          ],
                         ),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        //     Text("Drink Id:"),
-                        //     Text(
-                        //         "${snapshot.data!.userId[index].idDrink.toString()}"),
-                        //   ],
-                        // ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -109,9 +106,6 @@ class _DetailspageState extends State<Detailspage> {
                                 "${snapshot.data!.userId[index].category.toString()}"),
                           ],
                         ),
-                        SizedBox(
-                          height: 5,
-                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -119,9 +113,6 @@ class _DetailspageState extends State<Detailspage> {
                             Text(
                                 "${snapshot.data!.userId[index].alcohol.toString()}"),
                           ],
-                        ),
-                        SizedBox(
-                          height: 5,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,219 +134,51 @@ class _DetailspageState extends State<Detailspage> {
                                 style: Kheadingstyle,
                               )),
                         ),
-                        snapshot.data!.userId[index].ingredient1.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient1
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement1
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient2.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient2
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement2
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient3.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient3
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement3
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient4.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient4
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement4
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient5.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient5
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement5
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient6.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient6
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement6
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient7.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient7
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement7
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient8.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient8
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement8
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient9.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient9
-                                      .toString()),
-                                  Text(snapshot.data!.userId[index].measurement9
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient10.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient10
-                                      .toString()),
-                                  Text(snapshot
-                                      .data!.userId[index].measurement10
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient11.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient11
-                                      .toString()),
-                                  Text(snapshot
-                                      .data!.userId[index].measurement11
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient12.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient12
-                                      .toString()),
-                                  Text(snapshot
-                                      .data!.userId[index].measurement12
-                                      .toString()),
-                                ],
-                              ),
-
-                        snapshot.data!.userId[index].ingredient13.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient13
-                                      .toString()),
-                                  Text(snapshot
-                                      .data!.userId[index].measurement13
-                                      .toString()),
-                                ],
-                              ),
-                        snapshot.data!.userId[index].ingredient14.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient14
-                                      .toString()),
-                                  Text(snapshot
-                                      .data!.userId[index].measurement14
-                                      .toString()),
-                                ],
-                              ),
-                        snapshot.data!.userId[index].ingredient15.toString() ==
-                                "null"
-                            ? Container()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(snapshot.data!.userId[index].ingredient15
-                                      .toString()),
-                                  Text(snapshot
-                                      .data!.userId[index].measurement15
-                                      .toString()),
-                                ],
-                              ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(snapshot.data!.userId[index].ingredient1
+                                .toString()),
+                            Text(snapshot.data!.userId[index].measurement1
+                                .toString()),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(snapshot.data!.userId[index].ingredient2
+                                .toString()),
+                            Text(snapshot.data!.userId[index].measurement1
+                                .toString()),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(snapshot.data!.userId[index].ingredient3
+                                .toString()),
+                            Text(snapshot.data!.userId[index].measurement1
+                                .toString()),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(snapshot.data!.userId[index].ingredient4
+                                .toString()),
+                            Text(snapshot.data!.userId[index].measurement1
+                                .toString()),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(snapshot.data!.userId[index].ingredient5
+                                .toString()),
+                            Text(snapshot.data!.userId[index].measurement1
+                                .toString()),
+                          ],
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(top: 20, bottom: 20),
                           child: Container(

@@ -117,14 +117,14 @@ class _SearchpageState extends State<Searchpage> {
                                       children: [
                                         Column(
                                           children: [
-                                            // Row(
-                                            //   children: [
-                                            //     Text("ID:"),
-                                            //     Text(snapshot
-                                            //         .data!.userId[index].idDrink
-                                            //         .toString()),
-                                            //   ],
-                                            // ),
+                                            Row(
+                                              children: [
+                                                Text("ID:"),
+                                                Text(snapshot
+                                                    .data!.userId[index].idDrink
+                                                    .toString()),
+                                              ],
+                                            ),
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   top: 50),

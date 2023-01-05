@@ -107,26 +107,6 @@ flutter:
     - assets/dutch.png
     - assets/egyptflag.png
     - assets/franceflag.webp
-    - assets/grece.webp
-    - assets/indian.webp
-    - assets/irish.webp
-    - assets/italy.png
-    - assets/jamaica.jpeg
-    - assets/japanese.png
-    - assets/kenya.webp
-    - assets/malasia.webp
-    - assets/mesico.webp
-    - assets/moroco.png
-    - assets/russian.png
-    - assets/portugal.png
-    - assets/polish.png
-    - assets/tunisha.png
-    - assets/thai.png
-    - assets/spain.png
-    - assets/thaia.png
-    - assets/vitman.png
-    - assets/turkis.png
-
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
