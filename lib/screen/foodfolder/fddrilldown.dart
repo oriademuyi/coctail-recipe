@@ -130,14 +130,14 @@ class _fdfrilldownState extends State<fdfrilldown> {
                                       children: [
                                         Column(
                                           children: [
-                                            Row(
-                                              children: [
-                                                Text("ID:"),
-                                                Text(snapshot
-                                                    .data!.meals![index].idMeal
-                                                    .toString()),
-                                              ],
-                                            ),
+                                            // Row(
+                                            //   children: [
+                                            //     Text("ID:"),
+                                            //     Text(snapshot
+                                            //         .data!.meals![index].idMeal
+                                            //         .toString()),
+                                            //   ],
+                                            // ),
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   top: 50),

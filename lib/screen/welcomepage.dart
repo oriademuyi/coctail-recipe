@@ -88,8 +88,8 @@ class _welcomepageState extends State<welcomepage> {
                 children: [
                   Container(
                     height: 80,
-                    width: 250,
-                    padding: EdgeInsets.all(20.0),
+                    width: 240,
+                    padding: EdgeInsets.only(bottom: 25, top: 15, right: 15),
                     alignment: Alignment.center,
                     child: TextField(
                       style: TextStyle(color: Colors.black),
@@ -113,7 +113,7 @@ class _welcomepageState extends State<welcomepage> {
                     child: Icon(
                       Icons.saved_search,
                       color: Colors.white,
-                      size: 40.0,
+                      size: 30.0,
                     ),
                   ),
                 ],
@@ -210,16 +210,16 @@ class _welcomepageState extends State<welcomepage> {
                                               children: [
                                                 Column(
                                                   children: [
-                                                    Row(
-                                                      children: [
-                                                        Text("ID:"),
-                                                        Text(snapshot
-                                                            .data!
-                                                            .userId[index]
-                                                            .idDrink
-                                                            .toString()),
-                                                      ],
-                                                    ),
+                                                    // Row(
+                                                    //   children: [
+                                                    //     Text("ID:"),
+                                                    //     Text(snapshot
+                                                    //         .data!
+                                                    //         .userId[index]
+                                                    //         .idDrink
+                                                    //         .toString()),
+                                                    //   ],
+                                                    // ),
                                                     Padding(
                                                       padding:
                                                           const EdgeInsets.only(
@@ -286,50 +286,6 @@ class _welcomepageState extends State<welcomepage> {
                   }
                 },
               ),
-              // Padding(
-              //   padding: const EdgeInsets.all(20.0),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Container(
-              //           width: 300,
-              //           height: 200,
-              //           decoration: BoxDecoration(
-              //             borderRadius: BorderRadius.all(Radius.circular(25)),
-              //             boxShadow: [
-              //               BoxShadow(
-              //                 color: Colors.grey.withOpacity(0.5),
-              //                 spreadRadius: 5,
-              //                 blurRadius: 7,
-              //                 offset:
-              //                     Offset(0, 3), // changes position of shadow
-              //               ),
-              //             ],
-              //             color: Colors.white,
-              //           ),
-              //           alignment: Alignment.center,
-              //           child: Padding(
-              //             padding: const EdgeInsets.all(20.0),
-              //             child: Row(
-              //               crossAxisAlignment: CrossAxisAlignment.start,
-              //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //               children: [
-              //                 Column(
-              //                   children: [
-              //                     SizedBox(width: 100, child: Text("Name: ")),
-              //                     Text("Id:"),
-              //                   ],
-              //                 ),
-              //                 SizedBox(
-              //                     width: 150,
-              //                     child:
-              //                         Image.asset('lib/images/cocktail.jpeg')),
-              //               ],
-              //             ),
-              //           )),
-              //     ],
-              //   ),
-              // ),
               Center(
                 child: FutureBuilder<Album>(
                   future: futurenonAlbum,
@@ -406,16 +362,16 @@ class _welcomepageState extends State<welcomepage> {
                                                 children: [
                                                   Column(
                                                     children: [
-                                                      Row(
-                                                        children: [
-                                                          Text("ID:"),
-                                                          Text(snapshot
-                                                              .data!
-                                                              .userId[index]
-                                                              .idDrink
-                                                              .toString()),
-                                                        ],
-                                                      ),
+                                                      // Row(
+                                                      //   children: [
+                                                      //     Text("ID:"),
+                                                      //     Text(snapshot
+                                                      //         .data!
+                                                      //         .userId[index]
+                                                      //         .idDrink
+                                                      //         .toString()),
+                                                      //   ],
+                                                      // ),
                                                       Padding(
                                                         padding:
                                                             const EdgeInsets
@@ -479,7 +435,7 @@ class _welcomepageState extends State<welcomepage> {
                             );
                           });
                     } else {
-                      print(snapshot.data);
+                      // print(snapshot.data);
                       return Text('Loading data');
                     }
                   },
