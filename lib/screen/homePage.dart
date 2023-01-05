@@ -58,222 +58,221 @@ class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Image.asset('assets/foodrecipe.jpeg').color,
-        appBar: AppBar(
-          title: Text("Fudrink"),
-          leading: IconButton(
-            icon: const Icon(Icons.menu),
-            tooltip: 'Menu Icon',
-            onPressed: () {},
-          ),
-          elevation: 0,
+      backgroundColor: Image.asset('assets/foodrecipe.jpeg').color,
+      appBar: AppBar(
+        title: Text("Recipes"),
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          tooltip: 'Menu Icon',
+          onPressed: () {},
         ),
-        body: ListView(
+        elevation: 0,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Find the best food/drink recipes"),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: Image.asset(
-                      _imagePaths[_currentImageIndex],
-                      width: 300,
-                      height: 300,
+            Text("Latest food/drink recipes"),
+            SizedBox(
+              height: 50,
+            ),
+            Center(
+              child: Image.asset(
+                _imagePaths[_currentImageIndex],
+                width: 300,
+                height: 300,
+              ),
+              // ClipOval(
+              //   child: _showFirstImage
+              //       ? Image.asset(
+              //           // 'assets/foodrecipe.jpeg',
+              //           'assets/food2.webp',
+              //           width: 300,
+              //           height: 300,
+              //         )
+              //       : Image.asset(
+              //           // 'assets/foodrecipe.jpeg',
+              //           'assets/coctail.jpeg',
+              //           width: 300,
+              //           height: 300,
+              //         ),
+              // ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text("Quick and Easy"),
+            SizedBox(
+              height: 30,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const welcomepage()),
+                );
+              },
+              child: Container(
+                  padding: const EdgeInsets.only(
+                      left: 35, right: 35, top: 10, bottom: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Quick and Easy",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "Let's make a drink and delicious food with latest recipe for you and your family.",
-                    style: TextStyle(height: 1.5),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const welcomepage()),
-                      );
-                    },
-                    child: Container(
-                        padding: const EdgeInsets.only(
-                            left: 35, right: 35, top: 10, bottom: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          ),
+                  child: Row(
+                    children: [
+                      ClipOval(
+                        child: Image.asset(
+                          'assets/drink1.jpeg',
+                          width: 60,
+                          height: 60,
                         ),
-                        child: Row(
-                          children: [
-                            ClipOval(
-                              child: Image.asset(
-                                'assets/drink1.jpeg',
-                                width: 60,
-                                height: 60,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 50,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Cocktail Recipe",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 18),
-                                ),
-                                Text(
-                                  "search,view and order",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "4.8",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    SizedBox(width: 5),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 15.0,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
-                        )),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const fdwelcomepage()),
-                      );
-                    },
-                    child: Container(
-                        padding: const EdgeInsets.only(
-                            left: 35, right: 35, top: 10, bottom: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Cocktail Recipe",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
-                        ),
-                        child: Row(
-                          children: [
-                            ClipOval(
-                              child: Image.asset(
-                                'assets/foodrecipe.jpeg',
-                                width: 60,
-                                height: 60,
+                          Text(
+                            "search,view and order",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "4.8",
+                                style: TextStyle(color: Colors.white),
                               ),
-                            ),
-                            SizedBox(
-                              width: 50,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Food Recipe",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 18),
-                                ),
-                                Text(
-                                  "search,view and order",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "4.8",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    SizedBox(width: 5),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 15.0,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
-                        )),
+                              SizedBox(width: 5),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.white,
+                                size: 15.0,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  )),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const fdwelcomepage()),
+                );
+              },
+              child: Container(
+                  padding: const EdgeInsets.only(
+                      left: 35, right: 35, top: 10, bottom: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
                   ),
-                ],
-              ),
+                  child: Row(
+                    children: [
+                      ClipOval(
+                        child: Image.asset(
+                          'assets/foodrecipe.jpeg',
+                          width: 60,
+                          height: 60,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Food Recipe",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
+                          Text(
+                            "search,view and order",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "4.8",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 5),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Colors.white,
+                                size: 15.0,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  )),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
