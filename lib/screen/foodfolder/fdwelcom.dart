@@ -106,8 +106,11 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                 children: [
                   Container(
                     height: 80,
-                    width: 240,
-                    padding: EdgeInsets.all(20.0),
+                    width: 200,
+                    padding: EdgeInsets.only(
+                      bottom: 25,
+                      top: 15,
+                    ),
                     alignment: Alignment.center,
                     child: TextField(
                       style: TextStyle(color: Colors.black),
@@ -128,10 +131,27 @@ class _fdwelcomepageState extends State<fdwelcomepage> {
                               );
                             }));
                     },
-                    child: Icon(
-                      Icons.saved_search,
-                      color: Colors.white,
-                      size: 30.0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 9.5),
+                      child: Container(
+                        height: 42,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(10),
+                              bottomRight: Radius.circular(10)),
+                          color: Colors.grey.shade300,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 1.0,
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.black,
+                          size: 30.0,
+                        ),
+                      ),
                     ),
                   ),
                 ],

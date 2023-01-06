@@ -8,7 +8,10 @@ const Ktestfeilddecoration = InputDecoration(
     color: Colors.grey,
   ),
   border: OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10)),
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(10),
+        bottomLeft: Radius.circular(10),
+      ),
       borderSide: BorderSide.none),
 );
 
